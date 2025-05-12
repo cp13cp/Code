@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="coderid.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Homes - Real Estate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  |<div class="container">
-    <div class="left"><div class="star"><i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i></div>
-      <i class="fa-sharp fa-solid fa-hashtag hash"></i>
-      <i class="fa-solid fa-lightbulb bulb"></i>
-      <img src="person.jpg">
-        <h1>Welcome</h1>
-        <p class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-         <div class="hexagon"></div>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-2xl font-bold">Dream Homes</h1>
+      <nav class="space-x-4 mt-2 md:mt-0">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#listings" class="hover:underline">Listings</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
     </div>
-    <div class="right">
-        <form action="post" class="form">
-            <div class=sub-form>
-            <h1>Login</h1>
-           <p>Hello please Enter your Detail for Login</p>
-            <div><input type="text"></div>
-            <div><input type="text"></div>
-            <span>forgot password</span>
-            <div class="btn1"><button>Login</button></div>
-            <div class="line"></div>
-            <div class="lower">
-            <p>i dont have a regster now</p>
-            <div><a href="#">rigister here</a></div></div></div>
-        </form>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-cover bg-center h-[300px] md:h-[400px] flex items-center justify-center text-center text-white" style="background-image: url('https://via.placeholder.com/1200x400');">
+    <div class="bg-black bg-opacity-50 p-6 rounded">
+      <h2 class="text-3xl md:text-5xl font-bold mb-2">Find Your Dream Home</h2>
+      <p class="text-lg">Browse top properties in your area</p>
     </div>
+  </section>
 
+  <!-- Listings -->
+  <section id="listings" class="py-10 px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-6">Featured Listings</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Property 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Villa" class="w-full">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Luxury Villa</h3>
+          <p>₹1.2 Cr - 4 BHK, Noida</p>
+        </div>
+      </div>
+      <!-- Property 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Apartment" class="w-full">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Modern Apartment</h3>
+          <p>₹65 Lakh - 2 BHK, Delhi</p>
+        </div>
+      </div>
+      <!-- Property 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="House" class="w-full">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Independent House</h3>
+          <p>₹90 Lakh - 3 BHK, Gwalior</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </div>
- 
-   
+  <!-- Contact Form -->
+  <section id="contact" class="bg-blue-50 py-10 px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-6">Contact Us</h2>
+    <form onsubmit="submitForm(event)" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+      <input type="text" placeholder="Your Name" required class="w-full mb-4 p-3 border border-gray-300 rounded" />
+      <input type="email" placeholder="Your Email" required class="w-full mb-4 p-3 border border-gray-300 rounded" />
+      <textarea placeholder="Your Message" required class="w-full mb-4 p-3 border border-gray-300 rounded"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">Send Message</button>
+      <p id="form-response" class="text-green-600 mt-3"></p>
+    </form>
+  </section>
 
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>© 2025 Dream Homes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('form-response').textContent = 'Thank you! We will contact you shortly.';
+    }
+  </script>
 </body>
 </html>
